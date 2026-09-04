@@ -1,0 +1,198 @@
+:root {
+  --mw-bg: #f7f6f3;
+  --mw-paper: #fffdf9;
+  --mw-text: #2b2b2b;
+  --mw-muted: #62686d;
+  --mw-line: #dedbd4;
+  --mw-navy: #0d2b45;
+  --mw-blue: #365b7d;
+  --mw-beige: #e9e2d4;
+  --mw-max: 1120px;
+}
+
+.mw-page { background: var(--mw-bg); color: var(--mw-text); }
+.mw-page .site-header { background: color-mix(in srgb, var(--mw-bg) 92%, transparent); }
+
+.mw-hero {
+  padding: 94px 0 76px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 24%, rgba(54,91,125,.10), transparent 28%),
+    radial-gradient(circle at 65% 100%, rgba(233,226,212,.70), transparent 34%);
+  border-bottom: 1px solid var(--mw-line);
+}
+.mw-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 64px;
+  align-items: center;
+}
+.mw-kicker {
+  margin: 0 0 14px;
+  color: var(--mw-blue);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.mw-hero h1 {
+  max-width: none;
+  margin: 0;
+  color: var(--mw-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.3rem, 7vw, 6.3rem);
+  line-height: .96;
+  letter-spacing: -.05em;
+}
+.mw-hero h1::after {
+  content: "";
+  display: block;
+  width: 58px;
+  height: 2px;
+  margin-top: 24px;
+  background: var(--mw-blue);
+}
+.mw-lead {
+  max-width: 670px;
+  margin: 27px 0 0;
+  color: var(--mw-muted);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+}
+.mw-hero-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 36%;
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(13,43,69,.13);
+  border: 1px solid rgba(13,43,69,.06);
+}
+
+.mw-story {
+  padding: 84px 0;
+}
+.mw-intro {
+  max-width: 780px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+.mw-intro p {
+  margin: 0;
+  color: var(--mw-muted);
+  font-size: 1.08rem;
+}
+
+.mw-chapter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 58px;
+  align-items: center;
+  padding: 64px 0;
+  border-top: 1px solid var(--mw-line);
+}
+.mw-chapter:first-of-type { border-top: 0; padding-top: 0; }
+.mw-chapter.reverse .mw-copy { order: 2; }
+.mw-chapter.reverse .mw-media { order: 1; }
+
+.mw-label {
+  margin: 0 0 10px;
+  color: var(--mw-blue);
+  font-size: .79rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.mw-copy h2 {
+  margin: 0 0 18px;
+  padding: 0;
+  color: var(--mw-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+}
+.mw-copy h2::before { display: none; }
+.mw-copy p {
+  margin: 0 0 16px;
+  color: var(--mw-muted);
+}
+.mw-copy p:last-child { margin-bottom: 0; }
+
+.mw-photo {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 16px 42px rgba(13,43,69,.09);
+  border: 1px solid rgba(13,43,69,.06);
+}
+.mw-photo.tall {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.mw-photo.wide {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.mw-photo.gxo {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.mw-caption {
+  margin: 10px 4px 0;
+  color: #777c80;
+  font-size: .84rem;
+}
+
+.mw-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.mw-duo .mw-photo {
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+}
+.mw-duo .mw-photo:first-child { object-position: center 20%; }
+.mw-duo .mw-photo:last-child { object-position: center 34%; }
+
+.mw-quote {
+  margin: 80px 0 10px;
+  padding: 34px;
+  color: white;
+  background: linear-gradient(135deg, var(--mw-navy), var(--mw-blue));
+  border-radius: 20px;
+  box-shadow: 0 20px 52px rgba(13,43,69,.12);
+}
+.mw-quote p {
+  max-width: 860px;
+  margin: 0;
+  color: rgba(255,255,255,.92);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.38;
+}
+
+.mw-back {
+  padding: 0 0 80px;
+}
+.mw-back .button { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .mw-hero-grid,
+  .mw-chapter { grid-template-columns: 1fr; gap: 34px; }
+  .mw-chapter.reverse .mw-copy,
+  .mw-chapter.reverse .mw-media { order: initial; }
+  .mw-hero { padding-top: 64px; }
+  .mw-hero-photo { max-height: 720px; }
+  .mw-duo .mw-photo { min-height: 360px; }
+}
+
+@media (max-width: 620px) {
+  .mw-hero { padding: 52px 0 56px; }
+  .mw-story { padding: 58px 0; }
+  .mw-intro { margin-bottom: 44px; text-align: left; }
+  .mw-chapter { padding: 46px 0; }
+  .mw-duo { grid-template-columns: 1fr; }
+  .mw-duo .mw-photo { min-height: 0; max-height: 560px; }
+  .mw-quote { margin-top: 52px; padding: 24px; }
+}
